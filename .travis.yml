@@ -16,16 +16,14 @@ python:
 env:
   global:
   - VERSION="8.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
-  - TRANSIFEX_USER='transbot@odoo-community.org'
-  - secure: "R3Tr39zWkjHWyKxBuOoxtvkIZNipt+HbPccuh9+fLi5irikIN3y1+YofBbK/H/wqzg6Vv6mnmwlHfXixiDmZRzQ1GidZ3nFqZYhGREp4vuEjBEf+rUb5/Ijrn6Zspgl+CCDR7ET9E3wOLMRV4A39poPgIll0vALzrAdIbdRbDqc="
+  - TRANSIFEX_USER='minipouet'
+  - secure: "MaeRm+ttezeLOtk0OuK0Tr5Rw11MG3z2yXBAsTBjE31Z2l8t6nr6ytNQxBqq+nnI+mEqp7fkkygqshiYehbc3fLm08ktBXZCuqzed7f+Y0QiKWEbEHrBpc2rxE9Ar190Q2mpHEdPEMFikbnHWugw1rtfaNz3ZjN3Z/Am1/lCGiW3reRKkf9so05Hn2hOZtuC2gXvkJ6fifgLgJI1GrTg9B4StJPA5wcbiR9rbxN5kikTGMcaRL3hItE4Ueo9ApoHEdEw7p/fXyr+fW6/zROK8qY/EYQ4LCWIjH48rDp3rKiacqRS5rsPEtq07gADv7qzgBE796s859KzWIC9+xE5nTbQ7kGgL5s1GWRajApJZtEdZtChk6+2ZS0mZC9Xp4QrGNQa0clrAKX9YeT5VT2s9VSBrysPQl6jDO3Wv1qOvxrqG9ODiX97bOYpUfYACIo2Pwc2/gmvw4FwYJVgiRLzmvQy3YKurdwz26PIV/qt77J/62oQWJXoZZvJKNuwxQtPaNgnVn+5oDXmWG5DJJ1ofY8B36c5YxwjB+VWxW21YK7ORJB09mmPIEP2Jkx8/zftUBxbDQcpJxFBwleFQEtuRaSTW/s3gSd9PY3pNPfV8bZJ+Si4jP5Yn8zdvr9ipORJuXUyUDX8N5O+HTtx5AVG5PTzmv33ieOKRULbKsswoQc="
+  - TRANSIFEX_PROJECT_SLUG='partner-contact-8-0'
+  - TRANSIFEX_ORGANIZATION='minipouet'
+
 
   matrix:
-  - LINT_CHECK="1"
   - TRANSIFEX="1"
-  - TESTS="1" ODOO_REPO="odoo/odoo" EXCLUDE="portal_partner_merge"
-  - TESTS="1" ODOO_REPO="OCA/OCB" EXCLUDE="portal_partner_merge"
-  - TESTS="1" ODOO_REPO="odoo/odoo" INCLUDE="portal_partner_merge"
-  - TESTS="1" ODOO_REPO="OCA/OCB" INCLUDE="portal_partner_merge"
 
 virtualenv:
   system_site_packages: true
@@ -33,7 +31,7 @@ virtualenv:
 install:
   - pip install requests
   - pip install unicodecsv
-  - git clone https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - git clone https://github.com/Ehtaga/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
 
